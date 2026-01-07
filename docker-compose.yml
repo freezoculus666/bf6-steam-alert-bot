@@ -1,11 +1,11 @@
 services:
   bot:
-    build: .
+    image: DOCKERHUB_USERNAME/bf6-steam-alert-bot:latest
     env_file:
       - .env
+    restart: unless-stopped
     volumes:
       - bot_data:/app/vol
-    restart: unless-stopped
 
 volumes:
   bot_data:
